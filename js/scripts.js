@@ -1,11 +1,28 @@
-var winnerCombination = [
-  [1, 2, 3];
-  [4, 5, 6];
-  [7, 8, 9];
-  [1, 4, 7];
-  [2, 5, 8];
-  [3, 6, 9];
-  [1, 5, 9];
-  [3, 5, 7];
 
-]
+
+var player1Turn=true;
+
+function checkwinner(){
+  if($("#ex1").attr("src") === "img/x.jpg" && ($("#ex2").attr("src") === "img/x.jpg") && ($("#ex3").attr("src") === "img/x.jpg")){
+    alert("You are the winner!")
+  }
+}
+
+$(document).ready(function(){
+
+  for(var i = 1; i<= 9; i++){
+    $("#"+ i).click(function(){
+      if(player1Turn){
+  $("#ex" + this.id ).attr("src", "img/x.jpg");
+  player1Turn = !player1Turn;
+  checkwinner();
+    }else{
+  player1Turn = !player1Turn;
+  $("#ex" + this.id ).attr ("src", "img/zero.png");
+  // checkwinner();
+    }
+
+  });
+}
+
+});
