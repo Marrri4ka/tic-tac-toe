@@ -58,9 +58,11 @@ function checkwinner(){
     alert("You are the winner!")
   }
 
+
 }
 
 $(document).ready(function(){
+
 
   for(var i = 1; i<= 9; i++){
     $("#"+ i).click(function(){
@@ -71,10 +73,23 @@ $(document).ready(function(){
     }else{
   player1Turn = !player1Turn;
   $("#ex" + this.id ).attr ("src", "img/zero.png");
-  // checkwinner();
+  checkwinner();
     }
 
   });
 }
+
+$("#play").click(function(){
+
+$("#board").slideDown();
+$("#select-figure").slideUp();
+});
+
+$("#restart").click(function(){
+$("#select-figure").slideDown();
+$("#board").slideUp();
+
+
+});
 
 });

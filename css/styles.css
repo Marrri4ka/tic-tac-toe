@@ -14,3 +14,6 @@ img{
 #zero{
   height: 120px;
 }
+#board{
+  display: none;
+}
